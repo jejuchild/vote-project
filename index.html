@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Weekly Vote</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
+  <title id="pageTitle">정기모임 투표</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .quota { color: black; }
+    .current { color: green; }
+    .overquota { color: red; }
+  </style>
 </head>
 <body>
-  <h1>이번 주의 투표</h1>
+  <h1 id="mainTitle"></h1>
+  
+  <!-- 이름 입력과 등급 선택 -->
   <form id="voteForm">
-    <label><input type="radio" name="choice" value="Option 1"> Option 1</label><br>
-    <label><input type="radio" name="choice" value="Option 2"> Option 2</label><br>
+    <label>이름: <input type="text" id="nameInput" required></label><br><br>
+    <label>
+      선택: 
+      <select id="levelSelect">
+        <option value="초급">초급</option>
+        <option value="중급">중급</option>
+        <option value="상급">상급</option>
+      </select>
+    </label><br><br>
     <button type="submit">투표 제출</button>
   </form>
 
-  <h2>실시간 투표 결과</h2>
+  <!-- 실시간 신청 현황 -->
+  <h2>신청 현황</h2>
   <div id="results"></div>
 
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
