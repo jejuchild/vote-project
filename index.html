@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Vote</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
+</head>
+<body>
+  <h1>이번 주의 투표</h1>
+  <form id="voteForm">
+    <label><input type="radio" name="choice" value="Option 1"> Option 1</label><br>
+    <label><input type="radio" name="choice" value="Option 2"> Option 2</label><br>
+    <button type="submit">투표 제출</button>
+  </form>
+
+  <h2>실시간 투표 결과</h2>
+  <div id="results"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
